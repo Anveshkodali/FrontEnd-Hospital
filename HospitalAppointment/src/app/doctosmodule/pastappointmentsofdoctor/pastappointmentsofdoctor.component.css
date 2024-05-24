@@ -1,0 +1,62 @@
+/* Define hospital color variables */
+:root {
+    --primary-color: #007bff; /* Primary color */
+    --secondary-color: #6c757d; /* Secondary color */
+    --success-color: #28a745; /* Success color */
+    --danger-color: #dc3545; /* Danger color */
+  }
+  
+  /* Style table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  /* Style table head */
+  thead {
+    background-color: var(--primary-color);
+    color: darkblue;
+  }
+  
+  /* Style table head cells */
+  th {
+    padding: 8px;
+    text-align: left;
+  }
+  
+  /* Style table body */
+  tbody {
+    background-color: #f8f9fa;
+  }
+  
+  /* Style table body rows */
+  tr {
+    border-bottom: 1px solid #dee2e6;
+  }
+  
+  /* Style table body cells */
+  td {
+    padding: 8px;
+  }
+  
+  /* Style status cell based on status */
+  td:nth-child(10) {
+    color: blue;
+    padding: 8px 12px;
+    border-radius: 4px;
+  }
+  
+  /* Define status colors */
+  td:nth-child(10)[data-status="confirmed"] {
+    background-color: var(--success-color);
+  }
+  
+  td:nth-child(10)[data-status="pending"] {
+    background-color: var(--secondary-color);
+  }
+  
+  td:nth-child(10)[data-status="cancelled"] {
+    background-color: var(--danger-color);
+  }
+  

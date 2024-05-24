@@ -1,0 +1,19 @@
+<app-doctorhomeheader></app-doctorhomeheader>
+<div class="container" *ngIf="appointments.length > 0; else noAppointments">
+  <div class="appointment-card" *ngFor="let appointment of appointments">
+    <h2>{{appointment.doctorName}}</h2>
+    <p><strong>Type:</strong> {{appointment.appointmentType}}</p>
+    <p><strong>Disease:</strong> {{appointment.disease}}</p>
+    <p><strong>Description:</strong> {{appointment.description}}</p>
+    <p><strong>Date:</strong> {{appointment.appointmentDate | date:'dd:MM:yyyy'}}</p>
+    <p><strong>Time:</strong> {{appointment.appointmentStartTime}} - {{appointment.appointmentEndTime}}</p>
+    <p><strong>Status:</strong> {{appointment.appointmentStatus}}</p>
+    <button [disabled]="appointment.appointmentStatus === 'Completed'" (click)="approveAppointment(appointment.appointmentId)">Patient Consulted</button>
+    <button [disabled]="appointment.appointmentStatus === 'Completed'" (click)="disapproveAppointment(appointment.appointmentId)">Patient Absent</button>
+  </div>
+</div>
+
+<ng-template #noAppointments>
+  <p>No appointments found for this doctor.</p>
+</ng-template>
+<app-footerdoctor></app-footerdoctor>

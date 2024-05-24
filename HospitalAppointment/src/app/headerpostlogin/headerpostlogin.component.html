@@ -1,0 +1,25 @@
+<header>
+    <nav class="navbar">
+      <button class="nav-button" (click)="goToAppointment()">Book Appointment</button>
+      <button class="nav-button" (click)="bookCheckUp()">Book CheckUp</button>
+      <button class="nav-button" (click)="bookFollowUp()">Book FollowUp</button>
+  
+      <select class="department-select" (change)="goToDisplayDoctor(selectDepartment.value)" #selectDepartment>
+        <option *ngFor="let department of departments" [value]="department">{{ department }}</option>
+      </select>
+  
+      <button class="nav-button" (click)="goToMyBookings()">My Bookings</button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <div *ngIf="profile" class="profile-container">
+          <img [src]="'assets/Images/' + profile.imagefile" alt="User's Photo" class="profile-photo">
+          <div class="profile-details">
+            <h6 class="dropdown-header profile-name">{{ profile.name }}</h6>
+            <p class="dropdown-item profile-email">{{ profile.email }}</p>
+            <p class="dropdown-item profile-username">{{ profile.username }}</p>
+          </div>
+        </div>
+      </div>
+      <button class="nav-button" (click)="logout()">Logout</button>
+    </nav>
+  </header>
+  

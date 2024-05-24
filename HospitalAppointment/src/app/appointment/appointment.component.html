@@ -1,0 +1,122 @@
+<app-headerpostlogin></app-headerpostlogin>
+<div class="appointment-form">
+  <h2>Book Appointment</h2>
+  <form (ngSubmit)="bookAppointment()">
+    <label for="appointmentType">Appointment Type:</label>
+<select [(ngModel)]="appointment.appointmentType" name="appointmentType" #appointmentType="ngModel" required>
+  <option value="Consultation">Consultation</option>
+  <option value="Therapy">Therapy</option>
+</select>
+
+<div *ngIf="appointmentType.invalid && (appointmentType.dirty || appointmentType.touched)" class="error">
+  Appointment Type is required.
+</div>
+
+<label for="appointmentDay">Appointment Day:</label>
+<input type="date" [(ngModel)]="appointment.appointmentDate" name="appointmentDate" min="{{today}}" #appointmentDate="ngModel" required>
+<div *ngIf="appointmentDate.invalid && (appointmentDate.dirty || appointmentDate.touched)" class="error">
+  Please select a future date.
+</div>
+  
+<label for="startTime">Start Time:</label>
+<select [(ngModel)]="appointment.appointmentStartTime" name="appointmentStartTime" #appointmentStartTime="ngModel" required>
+
+        <option value="06:00:00">06:00 AM</option>
+        <option value="06:30:00">06:30 AM</option>
+        <option value="07:00:00">07:00 AM</option>
+        <option value="07:30:00">07:30 AM</option>
+        <option value="08:00:00">08:00 AM</option>
+        <option value="08:30:00">08:30 AM</option>
+        <option value="09:00:00">09:00 AM</option>
+        <option value="09:30:00">09:30 AM</option>
+        <option value="10:00:00">10:00 AM</option>
+        <option value="10:30:00">10:30 AM</option>
+        <option value="11:00:00">11:00 AM</option>
+        <option value="11:30:00">11:30 AM</option>
+        <option value="13:00:00">01:00 PM</option>
+        <option value="13:30:00">01:30 PM</option>
+        <option value="14:00:00">2:00 PM</option>
+        <option value="14:30:00">2:30 PM</option>
+        <option value="15:00:00">03:00 PM</option>
+        <option value="15:30:00">03:30 PM</option>
+        <option value="16:00:00">04:00 PM</option>
+        <option value="16:30:00">04:30 PM</option>
+        <option value="17:00:00">05:00 PM</option>
+        <option value="17:30:00">05:30 PM</option>
+        <option value="18:00:00">06:00 PM</option>
+        <option value="18:30:00">06:30 PM</option>
+        <option value="19:00:00">07:00 PM</option>
+        <option value="19:30:00">07:30 PM</option>
+        <option value="20:00:00">08:00 PM</option>
+        <option value="20:30:00">08:30 PM</option>
+        <option value="21:00:00">09:00 PM</option>
+      </select>
+      <div *ngIf="appointmentStartTime.invalid && (appointmentStartTime.dirty || appointmentStartTime.touched)" class="error">
+        Start Time is required.
+      </div>
+    
+      <label for="endTime">End Time:</label>
+      <select [(ngModel)]="appointment.appointmentEndTime" name="appointmentEndTime" #appointmentEndTime="ngModel" required>
+
+        <option value="06:00:00">06:00 AM</option>
+        <option value="06:30:00">06:30 AM</option>
+        <option value="07:00:00">07:00 AM</option>
+        <option value="07:30:00">07:30 AM</option>
+        <option value="08:00:00">08:00 AM</option>
+        <option value="08:30:00">08:30 AM</option>
+        <option value="09:00:00">09:00 AM</option>
+        <option value="09:30:00">09:30 AM</option>
+        <option value="10:00:00">10:00 AM</option>
+        <option value="10:30:00">10:30 AM</option>
+        <option value="11:00:00">11:00 AM</option>
+        <option value="11:30:00">11:30 AM</option>
+        <option value="13:00:00">01:00 PM</option>
+        <option value="13:30:00">01:30 PM</option>
+        <option value="14:00:00">2:00 PM</option>
+        <option value="14:30:00">2:30 PM</option>
+        <option value="15:00:00">03:00 PM</option>
+        <option value="15:30:00">03:30 PM</option>
+        <option value="16:00:00">04:00 PM</option>
+        <option value="16:30:00">04:30 PM</option>
+        <option value="17:00:00">05:00 PM</option>
+        <option value="17:30:00">05:30 PM</option>
+        <option value="18:00:00">06:00 PM</option>
+        <option value="18:30:00">06:30 PM</option>
+        <option value="19:00:00">07:00 PM</option>
+        <option value="19:30:00">07:30 PM</option>
+        <option value="20:00:00">08:00 PM</option>
+        <option value="20:30:00">08:30 PM</option>
+        <option value="21:00:00">09:00 PM</option>
+      </select>
+      <div *ngIf="appointmentEndTime.invalid && (appointmentEndTime.dirty || appointmentEndTime.touched)" class="error">
+        End Time is required.
+      </div>
+
+    <label for="department">Department:</label>
+<select [(ngModel)]="appointment.selectDepartment" name="selectDepartment" (change)="getDoctors(appointment.selectDepartment)" required>
+  <option *ngFor="let dept of specialities" [value]="dept">{{ dept }}</option>
+</select>
+
+<label for="doctorName">Doctor:</label>
+
+<select [(ngModel)]="appointment.doctorName" name="doctorName" required>
+  <option *ngFor="let doctor of doctorslist" [value]="doctor">{{ doctor }}</option>
+</select>
+
+
+    <label for="disease">Disease:</label>
+  <input type="text" [(ngModel)]="appointment.disease" name="disease" #disease="ngModel" required>
+  <div *ngIf="disease.invalid && (disease.dirty || disease.touched)" class="error">
+    Disease is required.
+  </div>
+
+    <label for="description">Description:</label>
+  <textarea [(ngModel)]="appointment.description" name="description" #description="ngModel" required></textarea>
+  <div *ngIf="description.invalid && (description.dirty || description.touched)" class="error">
+    Description is required.
+  </div>
+
+    <button type="submit">Book Appointment</button>
+  </form>
+</div>
+  <app-footer></app-footer>

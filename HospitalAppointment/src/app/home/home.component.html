@@ -1,0 +1,56 @@
+<header>
+  <nav class="navbar">
+    <button class="nav-button" (click)="goToAppointment()">Book Appointment</button>
+    <button class="nav-button" (click)="bookCheckUp()">Book CheckUp</button>
+    <button class="nav-button" (click)="bookFollowUp()">Book FollowUp</button>
+
+    <select class="department-select" (change)="goToDisplayDoctor(selectDepartment.value)" #selectDepartment>
+      <option *ngFor="let department of departments" [value]="department">{{ department }}</option>
+    </select>
+    <button class="nav-button" (click)="goToMyBookings()">My Bookings</button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <div *ngIf="profile" class="profile-container">
+          <img [src]="'assets/Images/' + profile.imagefile" alt="User's Photo" class="profile-photo">
+          <div class="profile-details">
+            <h6 class="dropdown-header profile-name">{{ profile.name }}</h6>
+            <p class="dropdown-item profile-email">{{ profile.email }}</p>
+            <p class="dropdown-item profile-username">{{ profile.username }}</p>
+          </div>
+        </div>
+      </div>
+      
+      
+      
+    
+      
+    <button class="nav-button" (click)="logout()">Logout</button>
+  </nav>
+</header>
+
+<main>
+  <div class="flex-container">
+    <div class="benefits">
+      <h2>Benefits of Online Booking at Sai Clinic</h2>
+      <ul>
+        <li><strong>Convenience:</strong> Book appointments anytime, anywhere. No need to wait for clinic hours.</li>
+        <li><strong>Efficiency:</strong> Save time by avoiding long queues and waiting times at the clinic.</li>
+        <li><strong>Flexibility:</strong> Easily Booking or cancel appointments.</li>
+        <li><strong>Preparation:</strong> Know about your doctor's expertise.</li>
+      </ul>
+    </div>
+
+    <div class="quotes">
+      <h2>Inspiring Quotations</h2>
+      <blockquote>
+        <p>"The greatest wealth is health." - Virgil</p>
+        <p>"Health is not valued till sickness comes." - Thomas Fuller</p>
+        <p>"It is health that is real wealth and not pieces of gold and silver." - Mahatma Gandhi</p>
+      </blockquote>
+    </div>
+  </div>
+</main>
+
+
+<footer>
+  <app-footer></app-footer>
+</footer>

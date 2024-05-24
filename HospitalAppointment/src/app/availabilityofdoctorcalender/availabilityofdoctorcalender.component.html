@@ -1,0 +1,25 @@
+<app-headerpostlogin></app-headerpostlogin>
+<div *ngIf="schedules && schedules.length > 0">
+  <h2>Doctor's Schedule</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Day</th>
+        <th>Start Time</th>
+        <th>End Time</th>
+        <th>Availability</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let schedule of schedules">
+        <td>{{ schedule.date | date:'mediumDate' }}</td>
+        <td>{{ schedule.dayOfWeek }}</td>
+        <td>{{ schedule.startTime }}</td>
+        <td>{{ schedule.endTime }}</td>
+        <td>{{ schedule.availability }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<app-footer></app-footer>

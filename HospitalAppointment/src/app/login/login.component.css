@@ -1,0 +1,59 @@
+body {
+  font-family: Arial, sans-serif;
+  background-image: url('/assets/Userbackground.jpg');
+  background-repeat: no-repeat;
+  background-size: cover; /* This will make the image to full width and height */
+  height: 100vh; /* This will make the body to fill the page */
+  display: flex; /* This will make the form center */
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.00);
+}
+
+form div {
+  margin-bottom: 20px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button {
+  width: 50%;
+  padding: 10px;
+  border: none;
+  border-radius: 50px;
+  background-color: #007BFF;
+  color: white;
+  cursor: pointer;
+  border-left: 100%;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+.alert {
+  color: red;
+  font-size: 12px;
+}
+
+footer {
+  padding-bottom: 0%;
+  margin-bottom: 0%;
+  height: auto;
+}

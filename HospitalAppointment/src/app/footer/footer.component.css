@@ -1,0 +1,36 @@
+
+  footer {
+    
+    font-family: 'Times New Roman', Times, serif;
+    background-color: palevioletred;
+    padding: 20px;
+    color: #5C5C5C;
+    padding-bottom: 0;
+    border: 0 0 0 0;
+    border-top: 0%;  
+    
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+    margin: 0;
+    border: 0 0 0 0;
+
+  }
+  
+  .footer-section {
+    flex: 1;
+    padding: 10px;
+  }
+  
+  .footer-section h4 {
+    color: black;
+  }
+  
+  .footer-section p {
+    margin: 5px 0;
+    color: black;
+  }
+  

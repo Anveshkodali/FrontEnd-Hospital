@@ -1,0 +1,36 @@
+<app-headerpostlogin></app-headerpostlogin>
+<h2>Book Check-Up</h2>
+  <form [formGroup]="checkUpForm" (ngSubmit)="bookCheckUp()">
+    <div>
+      <label for="checkUpName">Check-Up Name:</label>
+      <select id="checkUpName" formControlName="checkUpName" required>
+      
+        <option value="Blood Test">Blood Test</option>
+  <option value="Urine Test">Urine Test</option>
+  <option value="X-Ray">X-Ray</option>
+  <option value="MRI Scan">MRI Scan</option>
+  <option value="CT Scan">CT Scan</option>
+      </select>
+      <div *ngIf="checkUpForm.controls['checkUpName'].invalid && (checkUpForm.controls['checkUpName'].dirty || checkUpForm.controls['checkUpName'].touched)" class="error">
+        Check-Up Name is required.
+      </div>
+    </div>
+    <div>
+      <label for="description">Description:</label>
+      <textarea id="description" formControlName="description" required></textarea>
+      <div *ngIf="checkUpForm.controls['description'].invalid && (checkUpForm.controls['description'].dirty || checkUpForm.controls['description'].touched)" class="error">
+        Description is required.
+      </div>
+    </div>
+    <div>
+      <label for="checkUpDate">Check-Up Date:</label>
+      <input type="date" id="checkUpDate" formControlName="checkUpDate" min="{{today}}" required>
+      <div *ngIf="checkUpForm.controls['checkUpDate'].invalid && (checkUpForm.controls['checkUpDate'].dirty || checkUpForm.controls['checkUpDate'].touched)" class="error">
+        Please select a date.
+      </div>
+    </div>
+    <button type="submit">Book Check-Up</button>
+  </form>
+  <p>{{ message }}</p>
+<app-footer></app-footer>
+        

@@ -1,0 +1,18 @@
+
+<header>
+  <a routerLink="/doctorhome" routerLinkActive="active-link">Anvesh Clinic</a>
+  <div>
+    <button (click)="toggleVisibility('login')">Login</button>
+    <button (click)="toggleVisibility('register')">SignUp</button>
+  </div>
+</header>
+
+
+  <div *ngIf="showLogin">
+    <app-doctorlogin></app-doctorlogin>
+  </div>
+  <div *ngIf="showRegister">
+    <app-doctorregister></app-doctorregister>
+  </div>
+
+<app-footerdoctor></app-footerdoctor>

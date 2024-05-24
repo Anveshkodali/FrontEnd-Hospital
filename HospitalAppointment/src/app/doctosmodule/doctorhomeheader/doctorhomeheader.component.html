@@ -1,0 +1,17 @@
+<header class="header">
+    <a routerLinkActive="active-link" routerLink="/doctorhomepostlogin" class="clinic-name">Anvesh Clinic</a>
+    <div class="header-buttons">
+      <button class="button" routerLink="/doctor/doctoraddschedule">Add Schedules</button>
+      <button class="button" routerLink="/doctor/update-schedule">Update schedules</button>
+      <button class="button" routerLink="/doctor/doctor-appointments">Pending Appointments</button>
+      <button class="button" routerLink="/doctor/pastappointments">Approved Appointments</button>
+      <div *ngIf="doctorProfile" class="profile-container">
+        <img [src]="'assets/Images/' + doctorProfile.ImagePath" alt="Doctor's Photo" class="profile-photo" (click)="toggleDetails()">
+        <div class="profile-details" [ngClass]="{'show-details': showDetails}">
+          <h6>Dr. {{ doctorProfile.FullName }}</h6>
+          <p>{{doctorProfile.Email}}</p>
+        </div>
+      </div>
+      <button class="button" (click)="logout()">Logout</button>
+    </div>
+  </header>

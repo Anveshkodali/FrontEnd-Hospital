@@ -1,0 +1,39 @@
+<app-header></app-header>
+<body>
+  <div class="bodyback">
+    <form (ngSubmit)="login()" #loginForm="ngForm">
+      <div>
+        <label for="loginusername">Username</label>
+        <input type="text" id="loginusername" name="loginusername" [(ngModel)]="logindetails.username" placeholder="UserName" required minlength="6" #username="ngModel" />
+        <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert">
+          <div *ngIf="username.errors.required">
+            Username is required.
+          </div>
+          <div *ngIf="username.errors.minlength">
+            Username must be at least 6 characters long.
+          </div>
+        </div>
+      </div>
+      <div>
+        <label for="loginpassword">Password</label>
+        <input type="password" id="loginpassword" name="loginpassword" [(ngModel)]="logindetails.password" placeholder="Password" required minlength="6" #password="ngModel" />
+        <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert">
+          <div *ngIf="password.errors.required">
+            Password is required.
+          </div>
+          <div *ngIf="password.errors.minlength">
+            Password must be at least 6 characters long.
+          </div>
+        </div>
+      </div>
+      <div>
+        <button type="submit" [disabled]="loginForm.invalid">Login</button>
+      </div>
+    </form>
+  </div>
+  </body>
+  <footer>
+    <app-footer></app-footer>
+  </footer>
+  
+  

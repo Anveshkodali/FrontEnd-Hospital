@@ -1,0 +1,24 @@
+<app-headerpostlogin></app-headerpostlogin>
+<div *ngIf="loading">
+  Loading...
+</div>
+<div *ngIf="!loading">
+  <h1>{{department}}s</h1>
+  <div *ngFor="let doctor of doctors" class="doctor-card">
+    <img [src]="'/assets/Images/' + doctor.imagepath" alt="Doctor's Photo">
+    <div class="doctor-info">
+      <h2>{{doctor.firstName}} {{doctor.lastName}}</h2>
+      <p><strong>Speciality:</strong> {{doctor.specialityname}}</p>
+      <p><strong>Experience:</strong> {{doctor.experience}} years</p>
+      <p><strong>Qualification:</strong> {{doctor.qualification}}</p>
+      <p><strong>Age:</strong> {{doctor.age}}</p>
+      <p><strong>Gender:</strong> {{doctor.genderName}}</p>
+      <p><strong>Description:</strong> {{doctor.description}}</p>
+  
+    <button (click)="book(doctor)">Book Appointment</button>
+  
+     <button (click)="goToAvailability(doctor.firstName + ' ' + doctor.lastName)">Know Availability</button>
+    
+  </div>
+</div>
+<app-footer></app-footer>

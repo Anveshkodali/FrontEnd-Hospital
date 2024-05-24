@@ -1,0 +1,148 @@
+/* Navbar styling */
+.navbar {
+  background-color: lightblue;
+  padding: 5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.nav-button:hover {
+  background-color: #45a049;
+}
+
+.department-select {
+  padding: 8px;
+  border-radius: 50px;
+}
+
+/* Main content styling */
+.doctor-card {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.doctor-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.doctor-name {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.doctor-department {
+  font-size: 1rem;
+  color: #666666;
+  margin-bottom: 10px;
+}
+
+.book-appointment-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.book-appointment-button:hover {
+  background-color: #0056b3;
+}
+
+/* Footer styling */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #f2f2f2;
+  
+}
+.profile-container {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.profile-photo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.profile-email,
+.profile-username {
+  font-size: 14px;
+  color: #666;
+}
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.benefits, .quotes {
+  flex-basis: 45%; /* adjust this value as needed */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+.main{
+  height: 100rem;
+  width: auto;
+}
+body {
+  font-family: Arial, sans-serif; /* Change this to your desired font */
+  color: #333; /* Change this to your desired font color */
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 50px; /* This adds a border radius to the flex container */
+  overflow: hidden; /* This ensures the border radius applies to all child elements */
+}
+
+.benefits, .quotes {
+  flex-basis: 45%; /* adjust this value as needed */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  font-style: italic;
+  background-color: darkblue;
+  font-family: 'Times New Roman', Times, serif; /* Change this to your desired font */
+  color: aqua; /* Change this to your desired font color */
+}
+

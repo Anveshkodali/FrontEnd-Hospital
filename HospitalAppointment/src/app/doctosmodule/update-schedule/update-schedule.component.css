@@ -1,0 +1,49 @@
+body {
+    min-height: 100vh; /* Makes the body height at least the height of the viewport */
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between; /* Spaces out the header, form, and footer */
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Adds some space between form elements */
+    max-width: 600px; /* Adjust as needed */
+    margin: 0 auto; /* Centers the form horizontally */
+    padding: 20px;
+    background-color: #f8f8f8; /* Adjust as needed */
+    border-radius: 10px; /* Adjust as needed */
+  }
+  
+  form div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Adds some space between the label and the select */
+  }
+  
+  form label {
+    font-weight: bold;
+  }
+  
+  form select {
+    padding: 10px;
+    border-radius: 5px; /* Adjust as needed */
+    border: 1px solid #ccc; /* Adjust as needed */
+  }
+  
+  form button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px; /* Adjust as needed */
+    background-color: #333; /* Adjust as needed */
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  form button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  

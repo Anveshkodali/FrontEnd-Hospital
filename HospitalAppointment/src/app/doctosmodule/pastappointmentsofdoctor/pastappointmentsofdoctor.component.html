@@ -1,0 +1,39 @@
+<app-doctorhomeheader></app-doctorhomeheader>
+<div *ngIf="appointments.length; else noAppointments">
+<table>
+    <thead>
+      <tr>
+      
+        <th>Type</th>
+        <th>Disease</th>
+        <th>Description</th>
+        <th>Department</th>
+        <th>Doctor Name</th>
+        <th>Date</th>
+        <th>Start Time</th>
+        <th>End Time</th>
+        <th>Total Bill</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let appointment of appointments">
+        <td>{{appointment.appointmentType}}</td>
+        <td>{{appointment.disease}}</td>
+        <td>{{appointment.description}}</td>
+        <td>{{appointment.selectDepartment}}</td>
+        <td>{{appointment.doctorName}}</td>
+        <td>{{appointment.appointmentDate | date}}</td>
+        <td>{{appointment.appointmentStartTime}}</td>
+        <td>{{appointment.appointmentEndTime}}</td>
+        <td>{{appointment.totalBill}}</td>
+        <td data-status="{{appointment.appointmentStatus}}">{{appointment.appointmentStatus}}</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <ng-template #noAppointments>
+    <p>No past appointments are there.</p>
+  </ng-template>
+  
+  <app-footerdoctor></app-footerdoctor>

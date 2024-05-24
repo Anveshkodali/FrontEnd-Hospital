@@ -1,0 +1,103 @@
+<app-headerpostlogin></app-headerpostlogin>
+<div>
+    <h2>Book Follow-Up</h2>
+    <form [formGroup]="followUpForm" (ngSubmit)="bookFollowUp()">
+      <div>
+        <label for="appointmentType">Appointment Type:</label>
+        <input id="appointmentType" formControlName="appointmentType">
+      </div>
+      <div>
+        <label for="doctorName">Doctor Name:</label>
+        <input id="doctorName" formControlName="doctorName">
+      </div>
+      <div>
+        <label for="appointmentDate">Appointment Date:</label>
+        <input type="date" id="appointmentDate" formControlName="appointmentDate">
+      </div>
+      <div>
+        <label for="previousAppointmentDate">Previous Appointment Date:</label>
+        <input type="date" id="previousAppointmentDate" formControlName="previousAppointmentDate">
+      </div>
+      <div>
+        <label for="appointmentStartTime">Appointment Start Time:</label>
+        <select id="appointmentStartTime" formControlName="appointmentStartTime">
+        <option value="06:00:00">06:00 AM</option>
+        <option value="06:30:00">06:30 AM</option>
+        <option value="07:00:00">07:00 AM</option>
+        <option value="07:30:00">07:30 AM</option>
+        <option value="08:00:00">08:00 AM</option>
+        <option value="08:30:00">08:30 AM</option>
+        <option value="09:00:00">09:00 AM</option>
+        <option value="09:30:00">09:30 AM</option>
+        <option value="10:00:00">10:00 AM</option>
+        <option value="10:30:00">10:30 AM</option>
+        <option value="11:00:00">11:00 AM</option>
+        <option value="11:30:00">11:30 AM</option>
+        <option value="13:00:00">01:00 PM</option>
+        <option value="13:30:00">01:30 PM</option>
+        <option value="14:00:00">2:00 PM</option>
+        <option value="14:30:00">2:30 PM</option>
+        <option value="15:00:00">03:00 PM</option>
+        <option value="15:30:00">03:30 PM</option>
+        <option value="16:00:00">04:00 PM</option>
+        <option value="16:30:00">04:30 PM</option>
+        <option value="17:00:00">05:00 PM</option>
+        <option value="17:30:00">05:30 PM</option>
+        <option value="18:00:00">06:00 PM</option>
+        <option value="18:30:00">06:30 PM</option>
+        <option value="19:00:00">07:00 PM</option>
+        <option value="19:30:00">07:30 PM</option>
+        <option value="20:00:00">08:00 PM</option>
+        <option value="20:30:00">08:30 PM</option>
+        <option value="21:00:00">09:00 PM</option>
+    </select>
+    
+      </div>
+      <div>
+        <label for="appointmentEndTime">Appointment End Time:</label>
+        <select  id="appointmentEndTime" formControlName="appointmentEndTime">
+        <option value="06:00:00">06:00 AM</option>
+        <option value="06:30:00">06:30 AM</option>
+        <option value="07:00:00">07:00 AM</option>
+        <option value="07:30:00">07:30 AM</option>
+        <option value="08:00:00">08:00 AM</option>
+        <option value="08:30:00">08:30 AM</option>
+        <option value="09:00:00">09:00 AM</option>
+        <option value="09:30:00">09:30 AM</option>
+        <option value="10:00:00">10:00 AM</option>
+        <option value="10:30:00">10:30 AM</option>
+        <option value="11:00:00">11:00 AM</option>
+        <option value="11:30:00">11:30 AM</option>
+        <option value="13:00:00">01:00 PM</option>
+        <option value="13:30:00">01:30 PM</option>
+        <option value="14:00:00">2:00 PM</option>
+        <option value="14:30:00">2:30 PM</option>
+        <option value="15:00:00">03:00 PM</option>
+        <option value="15:30:00">03:30 PM</option>
+        <option value="16:00:00">04:00 PM</option>
+        <option value="16:30:00">04:30 PM</option>
+        <option value="17:00:00">05:00 PM</option>
+        <option value="17:30:00">05:30 PM</option>
+        <option value="18:00:00">06:00 PM</option>
+        <option value="18:30:00">06:30 PM</option>
+        <option value="19:00:00">07:00 PM</option>
+        <option value="19:30:00">07:30 PM</option>
+        <option value="20:00:00">08:00 PM</option>
+        <option value="20:30:00">08:30 PM</option>
+        <option value="21:00:00">09:00 PM</option>
+    </select>
+    
+      </div>
+      <div>
+        <label for="disease">Disease:</label>
+        <input id="disease" formControlName="disease">
+      </div>
+      <div>
+        <label for="description">Description:</label>
+        <textarea id="description" formControlName="description"></textarea>
+      </div>
+      <button type="submit">Book Follow-Up</button>
+    </form>
+    <p>{{ message }}</p>
+  </div>
+  <app-footer></app-footer>

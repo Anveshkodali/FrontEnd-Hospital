@@ -1,0 +1,35 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+header {
+  display: flex;
+  padding: 20px;
+  background-color: pink;
+  color: #5C5C5C;
+  justify-content: space-between; /* Aligns items to the start and end of the container */
+}
+
+header a {
+  color: blue;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+header .button-container {
+  display: flex; /* Arrange children (buttons) in a row */
+  gap: 10px; /* Add some space between the buttons */
+}
+
+header .button-container button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 40px;
+  background-color: blue;
+  color: white;
+  cursor: pointer;
+}
+
+header .button-container button:hover {
+  background-color: grey;
+}

@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+    height:100vh;
+  }
+  
+  .container {
+    width: 600px;
+    margin: 0 auto;
+  }
+  
+  .appointment-card {
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  }
+  
+  .appointment-card h2 {
+    margin: 0;
+    color: #007BFF;
+  }
+  
+  .appointment-card p {
+    margin: 5px 0;
+  }
+  
+  .appointment-card button {
+    padding: 10px;
+    margin-top: 20px;
+    color: white;
+    background-color: #007BFF; /* Blue when enabled */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.appointment-card button:disabled {
+    background-color: grey; /* Grey when disabled */
+}
+  .appointment-card button:hover {
+    background-color: #0056b3;
+  }
+  

@@ -1,0 +1,17 @@
+<app-headerpostlogin></app-headerpostlogin>
+<div *ngIf="appointments.length > 0">
+  <div *ngFor="let appointment of appointments">
+      <div class="appointment-card">
+        <h4>Appointment Type: {{appointment.appointmentType}}</h4>
+        <h4>Slot: {{appointment.appointmentStartTime}}-{{appointment.appointmentEndTime}}</h4>
+        <h4>Appointment Date: {{appointment.appointmentDate | date:'shortDate'}}</h4>
+        <h4>Status: {{appointment.appointmentStatus}}</h4>
+        <p>Disease: {{appointment.disease}}</p>
+        <button *ngIf="appointment.appointmentStatus === 'Scheduled'" (click)="cancelAppointment(appointment.appointmentId)">Cancel</button>
+      </div>
+    </div>
+  </div>
+<div *ngIf="appointments.length === 0">
+  <p>No appointments found for this user.</p>
+</div>
+<app-footer></app-footer>
